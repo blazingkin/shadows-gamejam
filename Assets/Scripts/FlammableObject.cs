@@ -14,8 +14,17 @@ public class FlammableObject : MonoBehaviour
 		this.Position = position;
 	}
 
+	public void Start(){
+		foreach(Transform tr in transform){
+			if(tr.tag == "LightObj"){
+				lightObject = tr.gameObject;
+			}
+		}
+		this.Position = transform.position;
+		onLit ();
+	}
+
 	public void onLit(){
-		Debug.Log ("It's lit fam");
 		if (null != lightSource) {
 			lightSource.Extinguish();
 		}
