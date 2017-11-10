@@ -3,11 +3,12 @@ using System.Collections;
 using UnityEngine;
 
 /* More like inflammable object, amirite */
-public class FlammableObject
+public class FlammableObject : MonoBehaviour
 {
 	public Vector2 Position;
 	public float DimRadius, BrightRadius = 0f;
 	private LightSource lightSource = null;
+	public GameObject lightObject;
 
 	public FlammableObject (Vector2 position){
 		this.Position = position;
@@ -17,7 +18,7 @@ public class FlammableObject
 		if (null != lightSource) {
 			lightSource.Extinguish();
 		}
-		lightSource = new LightSource(Position, BrightRadius, DimRadius);
+		lightSource = new LightSource(lightObject, BrightRadius, DimRadius);
 	}
 
 	public void onExtinguish(){
