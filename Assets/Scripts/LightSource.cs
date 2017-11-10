@@ -17,17 +17,17 @@ public class LightSource{
 		LightSources.Remove(this);
 	}
 
-	public bool InThisLight(Transform location){
-		Vector2 distance = new Vector2(Object.transform.position.x - location.position.x, Object.transform.position.y - location.position.x);
+	public bool InThisLight(Vector3 location){
+		Vector2 distance = new Vector2(Object.transform.position.x - location.x, Object.transform.position.y - location.x);
 		return distance.magnitude < DimRadius;
 	}
 
-	public bool InThisBrightLight(Transform location){
-		Vector2 distance = new Vector2(Object.transform.position.x - location.position.x, Object.transform.position.y - location.position.y);
+	public bool InThisBrightLight(Vector3 location){
+		Vector2 distance = new Vector2(Object.transform.position.x - location.x, Object.transform.position.y - location.y);
 		return distance.magnitude < BrightRadius;
 	}
 
-	public static bool InLight(Transform location){
+	public static bool InLight(Vector3 location){
 		foreach (LightSource ls in LightSources) {
 			if (ls.InThisLight(location)){
 				return true;
@@ -36,7 +36,7 @@ public class LightSource{
 		return false;
 	}
 
-	public static bool InBrightLight(Transform location){
+	public static bool InBrightLight(Vector3 location){
 		foreach (LightSource ls in LightSources) {
 			if (ls.InThisBrightLight (location)) {
 				return true;
