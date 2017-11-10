@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EventController : MonoBehaviour {
 	public static ArrayList events = new ArrayList();
+	float timePassed = 0;
+	float timeForEvents = 1;
 
 	// Use this for initialization
 	void Start () {
@@ -12,11 +14,15 @@ public class EventController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		foreach (GameEvent ge in events) {
-			float random = Random.Range (0.0f, 1.0f);
-			if (random < ge.EventProbability ()) {
-				ge.OnEvent ();
-				Debug.Log("Fired event: "+ge.EventName());
+		timePassed += Time.deltaTime;
+		while (timePassed > timeForEvents) {
+			timePassed -= timeForEvents;
+			foreach (GameEvent ge in events) {
+				float random = Random.Range (0.0f, 1.0f);
+				if (random < ge.EventProbability ()) {
+					ge.OnEvent ();
+					Debug.Log ("Fired event: " + ge.EventName ());
+				}
 			}
 		}
 	}
