@@ -7,15 +7,22 @@ public class LightSource{
 	public GameObject Object;
 	public Light dim;
 	public Light bright;
-	public double DimRadius, BrightRadius;
+	public GameObject dimObj;
+	public GameObject brightObj;
+	public float DimRadius, BrightRadius;
 
-	public LightSource(GameObject obj, double brightRadius, double dimRadius){
+	public LightSource(GameObject obj, float brightRadius, float dimRadius){
 		this.Object = obj;
 		foreach(Transform tr in obj.transform){
+			Debug.Log (tr.tag);
 			if(tr.tag == "DimLight"){
+				dimObj = tr.gameObject;
+				Debug.Log ("found dim");
 				dim = tr.GetComponent<Light> ();
 			}
 			else if(tr.tag == "BrightLight"){
+				brightObj = tr.gameObject;
+				Debug.Log ("found bright");
 				bright = tr.GetComponent<Light> ();
 			}
 		}
@@ -23,8 +30,17 @@ public class LightSource{
 		this.DimRadius = dimRadius;	
 		this.BrightRadius = brightRadius;
 		LightSources.Add(this);
+		UpdateLighting ();
+		//dimObj.SetActive (true);
+		//brightObj.SetActive (true);
 		dim.enabled = true;
 		bright.enabled = true;
+
+	}
+
+	public void UpdateLighting(){
+		dim.spotAngle = RadiusToSpot (DimRadius);
+		bright.spotAngle = RadiusToSpot (BrightRadius);
 	}
 
 	public void Extinguish(){
@@ -61,5 +77,11 @@ public class LightSource{
 		return false;
 	}
 
+	private float RadiusToSpot(float radius){
+		//Debug.Log (Mathf.Atan (radius));
+		//Debug.Log (Mathf.Rad2Deg * Mathf.Atan (radius));
+		//return Mathf.Rad2Deg * Mathf.Atan (radius) * 2;
+		return radius * 2 + 50;
+	}
 
 }
