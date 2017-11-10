@@ -8,7 +8,7 @@ public class LightSource{
 	public double DimRadius, BrightRadius;
 	public LightSource(Vector2 location, double brightRadius, double dimRadius){
 		this.Position = location;
-		this.DimRadius = dimRadius;
+		this.DimRadius = dimRadius;	
 		this.BrightRadius = brightRadius;
 		LightSources.Add(this);
 	}
