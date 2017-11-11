@@ -13,4 +13,8 @@ public class CampFire : FlammableObject {
 		base.onExtinguish ();
 	}
 
+	public override float ExtinguishProbability(){
+		return 0.2f;
+	}
+
 }

@@ -14,4 +14,8 @@ public class MOAL : FlammableObject {
 		Destroy (gameObject);
 		FlammableObjects.Remove (this);
 	}
+
+	public override float ExtinguishProbability(){
+		return 0f;
+	}
 }

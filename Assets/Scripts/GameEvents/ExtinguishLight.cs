@@ -14,7 +14,9 @@ public class ExtinguishLight : GameEvent {
 	public void OnEvent(){
 		if (FlammableObject.FlammableObjects.Count > 0) {
 			int index = Random.Range (0, FlammableObject.FlammableObjects.Count - 1);
-			FlammableObject.FlammableObjects [index].onExtinguish ();
+			if (Random.Range (0f, 1f) < FlammableObject.FlammableObjects [index].ExtinguishProbability ()) {
+				FlammableObject.FlammableObjects [index].onExtinguish ();
+			}
 		}
 	}
 
