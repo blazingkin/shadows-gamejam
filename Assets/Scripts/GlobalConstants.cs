@@ -5,12 +5,25 @@ public class GlobalConstants
 {
 
 	public static float MapWidth = 16f;
+
+
+
 	public static float MapHeight = 9f;
-	public static float GameLength = .1f; // Minutes
+
+
+	public static float GameLength = 5f; // Minutes
+
+
 	public static float PlayerSpeed = 1f;
+
+
 	public static float PlayerStoppingDist = 0.2f;
-	public static float PlayerInteractionDistance = .5f;
-	public static float InteractionDistance = 0.5f;
+
+
+	public static float PlayerInteractionDistance = 1f;
+
+
+	public static float InteractionDistance = 1f;
 
 }
 
