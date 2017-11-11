@@ -18,12 +18,10 @@ public class LightSource{
 			Debug.Log (tr.tag);
 			if(tr.tag == "DimLight"){
 				dimObj = tr.gameObject;
-				Debug.Log ("found dim");
 				dim = tr.GetComponent<Light> ();
 			}
 			else if(tr.tag == "BrightLight"){
 				brightObj = tr.gameObject;
-				Debug.Log ("found bright");
 				bright = tr.GetComponent<Light> ();
 			}
 		}
