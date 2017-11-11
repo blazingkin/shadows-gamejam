@@ -15,7 +15,6 @@ public class LightSource{
 	public LightSource(GameObject obj, float brightRadius, float dimRadius){
 		this.Object = obj;
 		foreach(Transform tr in obj.transform){
-			Debug.Log (tr.tag);
 			if(tr.tag == "DimLight"){
 				dimObj = tr.gameObject;
 				dim = tr.GetComponent<Light> ();
