@@ -33,7 +33,7 @@ public class UIManager : MonoBehaviour {
 		LightSource.resetLightSources ();
 		FlammableObject.clearFlammableObjects();
 		EnemyController.clearEnemies ();
-		PlayerData.initialize ();
 		MatchUIManager.clear ();
+		PlayerData.initialize ();
 	}
 }
