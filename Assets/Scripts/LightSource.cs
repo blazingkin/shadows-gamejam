@@ -82,8 +82,7 @@ public class LightSource{
 	private float RadiusToSpot(float radius){
 		//Debug.Log (Mathf.Atan (radius));
 		//Debug.Log (Mathf.Rad2Deg * Mathf.Atan (radius));
-		//return Mathf.Rad2Deg * Mathf.Atan (radius) * 2;
-		return radius * 2 + 50;
+		return Mathf.Rad2Deg * Mathf.Atan (radius) * 2;
 	}
 
 }
