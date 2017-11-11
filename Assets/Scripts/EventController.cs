@@ -9,7 +9,8 @@ public class EventController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		events.Add (new ExtinguishLight ());	
+		events.Add (new ExtinguishLight ());
+		events.Add (new SpawnEnemy()); 
 	}
 	
 	// Update is called once per frame

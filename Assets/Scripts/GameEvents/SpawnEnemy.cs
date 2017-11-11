@@ -9,11 +9,11 @@ public class SpawnEnemy : GameEvent
 	}
 
 	public float EventProbability(){
-		return 0.01f;
+		return 1f;
 	}
 
 	public void OnEvent(){
-
+		EnemyController.enemies.Add (GameObject.Instantiate (Resources.Load ("Prefabs/enemy"), findLocationToSpawn (), Quaternion.identity) as GameObject);
 	}
 
 	private Vector3 findLocationToSpawn(){
@@ -21,7 +21,7 @@ public class SpawnEnemy : GameEvent
 		x = Random.Range (0, GlobalConstants.MapWidth);
 		y = Random.Range (0, GlobalConstants.MapHeight);
 		Vector3 Position = new Vector3(x, y);
-		if (LightSource.InLight (Position)) {
+		if (!LightSource.InLight (Position)) {
 			return Position;
 		}
 		return findLocationToSpawn ();
