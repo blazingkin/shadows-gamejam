@@ -4,12 +4,8 @@ using UnityEngine;
 
 public class MOAL : FlammableObject {
 
-	public Sprite litSprite;
-	public Sprite extinguishedSprite;
-
 	public override void onLit(){
 		base.onLit ();
-		GetComponent<SpriteRenderer> ().sprite = litSprite;
 		Invoke ("onExtinguish", 2);
 	}
 

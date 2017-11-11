@@ -13,6 +13,8 @@ public class FlammableObject : MonoBehaviour
 	protected LightSource lightSource = null;
 	public GameObject lightObject;
 	public bool shouldStartLit = false;
+	public Sprite litSprite;
+	public Sprite extinguishedSprite;
 
 	public void Start(){
 		foreach(Transform tr in transform){
@@ -29,6 +31,7 @@ public class FlammableObject : MonoBehaviour
 
 	public virtual void onLit(){
 		lightSource = new LightSource(lightObject, BrightRadius, DimRadius);
+		GetComponent<SpriteRenderer> ().sprite = litSprite;
 	}
 
 	public virtual void onExtinguish(){
@@ -36,6 +39,7 @@ public class FlammableObject : MonoBehaviour
 			lightSource.Extinguish();
 		}
 		lightSource = null;
+		GetComponent<SpriteRenderer> ().sprite = extinguishedSprite;
 	}
 
 	public virtual void Update(){
