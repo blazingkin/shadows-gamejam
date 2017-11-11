@@ -43,15 +43,10 @@ public class FlammableObject : MonoBehaviour
 	}
 
 	public virtual void Update(){
-		if (Input.GetMouseButtonDown (1)) {
-			Vector3 mousePos = PositionMath.getMouseLocation();
-			if ((transform.position - mousePos).magnitude < GlobalConstants.InteractionDistance){
-				if (lightSource == null || lightSource.lit == false) {
-					if ((PositionMath.getPlayerPosition () - transform.position).magnitude < GlobalConstants.PlayerInteractionDistance) {
-						if (PlayerData.useMatch ()) {
-							onLit ();
-						}
-					}
+		if (PositionMath.playerInteractedWith (transform.position)) {
+			if (lightSource == null || lightSource.lit == false) {
+				if (PlayerData.useMatch ()) {
+					onLit ();
 				}
 			}
 		}

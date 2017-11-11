@@ -16,7 +16,7 @@ public class UIManager : MonoBehaviour {
 	}
 
 	public void StartGame(){
-		SceneManager.LoadScene ("MainLevel");
+		SceneManager.LoadScene ("GrassLevel");
 	}
 
 	public void BackToMainMenu(){

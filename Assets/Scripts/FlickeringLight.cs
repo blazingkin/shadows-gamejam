@@ -6,9 +6,11 @@ public class FlickeringLight : MonoBehaviour {
 
 	Light light;
 	public float intensity;
+	public float randomIntensity;
 	public float minIntensity = 3f, maxIntesity = 5f;
 	public float timeDelay = .05f;
 	float time =  0;
+	public bool updateIntesity = false;
 
 	// Use this for initialization
 	void Start () {
@@ -17,11 +19,16 @@ public class FlickeringLight : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		time += Time.deltaTime;
+
+		if(updateIntesity){
+			
+		}
+
+		/*time += Time.deltaTime;
 		while (time > timeDelay) {
 			time -= timeDelay;
 			intensity = Random.Range (minIntensity, maxIntesity);
 			light.intensity = intensity;
-		}
+		}*/
 	}
 }
