@@ -26,13 +26,7 @@ public class PlayerMovement : MonoBehaviour
 	}
 
 	void OnMouseDown(){
-		float x = (Input.mousePosition.x * GlobalConstants.MapWidth) / Screen.width;
-		x *= 2;
-		x -= GlobalConstants.MapWidth;
-		float y = (Input.mousePosition.y * GlobalConstants.MapHeight) / Screen.height;
-		y *= 2;
-		y -= GlobalConstants.MapHeight;
-		target = new Vector3 (x, y);
+		target = PositionMath.getMouseLocation ();
 		rbody.velocity = target - player.transform.position;
 		rbody.velocity /= rbody.velocity.magnitude;
 		rbody.velocity *= GlobalConstants.PlayerSpeed; 

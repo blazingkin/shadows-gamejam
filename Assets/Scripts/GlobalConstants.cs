@@ -9,5 +9,7 @@ public class GlobalConstants
 	public static float PlayerSpeed = 0.2f;
 	public static float PlayerStoppingDist = 0.01f;
 	public static int GameLength = 5; // Minutes
+	public static float PlayerInteractionDist = 0.1f;
+
 }
 
