@@ -25,5 +25,7 @@ public class GlobalConstants
 
 	public static float InteractionDistance = 1f;
 
+
+	public static float EndMoonPos = 15.5f;
 }
 
