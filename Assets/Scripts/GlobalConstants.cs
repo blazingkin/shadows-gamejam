@@ -11,7 +11,7 @@ public class GlobalConstants
 	public static float MapHeight = 9f;
 
 
-	public static float GameLength = 5f; // Minutes
+	public static float GameLength = .1f; // Minutes
 
 
 	public static float PlayerSpeed = 1f;

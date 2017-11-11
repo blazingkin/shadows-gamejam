@@ -21,7 +21,7 @@ public class EnemyController : MonoBehaviour {
 		rbody.AddForce (new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)));
 		timePassed += Time.deltaTime;
 		if (timePassed > timeToCheck) {
-			if (LightSource.InLight (enemy.transform.position)) {
+			if (LightSource.InBrightLight (enemy.transform.position)) {
 				enemy.GetComponent<SpriteRenderer> ().enabled = false;
 			} else {
 				enemy.GetComponent<SpriteRenderer> ().enabled = true;

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WordClock : MonoBehaviour {
 
@@ -20,9 +21,7 @@ public class WordClock : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(moon.transform.position.x >= 15.5){
-			Debug.Log ("Game Over");
-			GameObject nil = null;
-			nil.transform.position = transform.position;
+			SceneManager.LoadScene ("GameOver");
 		}
 	}
 
