@@ -2,15 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MOAL : MonoBehaviour {
+public class MOAL : FlammableObject {
 
-	// Use this for initialization
-	void Start () {
-		
+	public Sprite litSprite;
+	public Sprite extinguishedSprite;
+
+	public override void onLit(){
+		base.onLit ();
+		GetComponent<SpriteRenderer> ().sprite = litSprite;
+		Invoke ("onExtinguish", 2);
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+
+	public override void onExtinguish(){
+		base.onExtinguish ();
+		Destroy (gameObject);
+		FlammableObjects.Remove (this);
 	}
 }
