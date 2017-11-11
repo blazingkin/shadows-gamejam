@@ -9,7 +9,7 @@ public class SpawnEnemy : GameEvent
 	}
 
 	public float EventProbability(){
-		return 1f;
+		return .001f;
 	}
 
 	public void OnEvent(){
@@ -18,8 +18,8 @@ public class SpawnEnemy : GameEvent
 
 	private Vector3 findLocationToSpawn(){
 		float x, y;
-		x = Random.Range (0, GlobalConstants.MapWidth);
-		y = Random.Range (0, GlobalConstants.MapHeight);
+		x = Random.Range (-GlobalConstants.MapWidth, GlobalConstants.MapWidth);
+		y = Random.Range (-GlobalConstants.MapHeight, GlobalConstants.MapHeight);
 		Vector3 Position = new Vector3(x, y);
 		if (!LightSource.InLight (Position)) {
 			return Position;
