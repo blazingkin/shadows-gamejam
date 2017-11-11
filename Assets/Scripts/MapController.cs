@@ -10,13 +10,7 @@ public class MapController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		map = gameObject;
-
-		foreach(Transform t1 in transform){
-			foreach(Transform t2 in t1){
-				t1.GetComponent<SpriteRenderer> ().material = material;
-			}
-		}
+		map = GameObject.Instantiate (Resources.Load("Prefabs/Map"), new Vector2(0, 0), Quaternion.identity) as GameObject;
 
 	}
 	
