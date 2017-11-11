@@ -8,6 +8,7 @@ public class MatchUIManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		clear ();
 		for (int i = 0; i < PlayerData.Matches; i++) {
 			addMatch ();
 		}
@@ -25,23 +26,22 @@ public class MatchUIManager : MonoBehaviour {
 		}
 	}
 
-	void addMatch(){
+	static void addMatch(){
 		Vector2 position = new Vector2 (GlobalConstants.FirstMatchPos.x, GlobalConstants.FirstMatchPos.y);
 		position.x += (MatchUIElements.Count * GlobalConstants.MatchSpacing);
-		Debug.Log (position);
 		GameObject match = GameObject.Instantiate (Resources.Load ("Prefabs/UI/MatchUI"), position, Quaternion.identity) as GameObject;
 		MatchUIElements.Add (match);
 	}
 
-	void removeMatch(){
+	static void removeMatch(){
 		GameObject last = MatchUIElements [MatchUIElements.Count - 1];
-		Destroy (last);
 		MatchUIElements.Remove (last);
+		Destroy (last);
 	}
 
 	public static void clear(){
-		foreach (GameObject go in MatchUIElements) {
-			Destroy (go);
+		while (MatchUIElements.Count > 1) {
+			removeMatch ();
 		}
 		MatchUIElements = new List<GameObject> ();
 	}

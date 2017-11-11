@@ -27,7 +27,9 @@ public class PlayerMovement : MonoBehaviour
 	}
 
 	void OnTriggerEnter2D(Collider2D collision){
-		PlayerData.Damage (1f);
+		if (!LightSource.InLight (player.transform.position)) {
+			PlayerData.Damage (1f);
+		}
 	}
 
 	void OnMouseDown(){
