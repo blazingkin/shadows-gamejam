@@ -17,6 +17,7 @@ public class FlammableObject : MonoBehaviour
 			}
 		}
 		this.Position = transform.position;
+		onLit ();
 	}
 
 	public void onLit(){
