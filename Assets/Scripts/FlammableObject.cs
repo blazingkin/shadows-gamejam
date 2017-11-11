@@ -6,7 +6,7 @@ using UnityEngine;
 /* More like inflammable object, amirite */
 public class FlammableObject : MonoBehaviour
 {
-	private static List<FlammableObject> FlammableObjects = new List<FlammableObject> ();
+	public static List<FlammableObject> FlammableObjects = new List<FlammableObject> ();
 
 	public Vector3 Position;
 	public float DimRadius, BrightRadius = 0f;

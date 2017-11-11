@@ -8,22 +8,13 @@ public class CampFire : FlammableObject {
 	public Sprite extinguishedSprite;
 
 	public override void onLit(){
-		lightSource = new LightSource(lightObject, BrightRadius, DimRadius);
+		base.onLit ();
+		GetComponent<SpriteRenderer> ().sprite = litSprite;
 	}
 
 	public override void onExtinguish(){
-		if (null != lightSource) {
-			lightSource.Extinguish();
-		}
-		lightSource = null;
+		base.onExtinguish ();
+		GetComponent<SpriteRenderer> ().sprite = extinguishedSprite;
 	}
 
-	public override void Update(){
-		base.Update ();
-		if (null == lightSource || !lightSource.lit) {
-			GetComponent<SpriteRenderer> ().sprite = extinguishedSprite;
-		} else {
-			GetComponent<SpriteRenderer> ().sprite = litSprite;
-		}
-	}
 }
