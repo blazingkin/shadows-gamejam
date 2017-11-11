@@ -26,6 +26,10 @@ public class PlayerMovement : MonoBehaviour
 		}
 	}
 
+	void OnTriggerEnter2D(Collider2D collision){
+		PlayerData.Damage (1f);
+	}
+
 	void OnMouseDown(){
 		target = PositionMath.getMouseLocation ();
 		rbody.velocity = target - player.transform.position;

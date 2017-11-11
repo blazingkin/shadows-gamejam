@@ -21,17 +21,10 @@ public class WordClock : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(moon.transform.position.x >= GlobalConstants.EndMoonPos){
-			cleanup ();
-			SceneManager.LoadScene ("GameOver");
+			UIManager.GameOver ();
 		}
 	}
 
-	private void cleanup(){
-		LightSource.resetLightSources ();
-		FlammableObject.clearFlammableObjects();
-		EnemyController.clearEnemies ();
-		PlayerData.initialize ();
-		MatchUIManager.clear ();
-	}
+
 
 }

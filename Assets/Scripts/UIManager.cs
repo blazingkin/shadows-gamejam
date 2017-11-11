@@ -23,4 +23,17 @@ public class UIManager : MonoBehaviour {
 		SceneManager.LoadScene ("MainMenu");
 	}
 
+	public static void GameOver(){
+		cleanup ();
+		SceneManager.LoadScene ("GameOver");
+	}
+
+
+	private static void cleanup(){
+		LightSource.resetLightSources ();
+		FlammableObject.clearFlammableObjects();
+		EnemyController.clearEnemies ();
+		PlayerData.initialize ();
+		MatchUIManager.clear ();
+	}
 }

@@ -6,6 +6,7 @@ public class PlayerData {
 
 	public static GameObject playerObj;
 	public static int Matches = GlobalConstants.PlayerStartingMatches;
+	public static float Health = GlobalConstants.PlayerStartingHealth;
 
 	public static bool useMatch(){
 		if (Matches <= 0) {
@@ -15,8 +16,16 @@ public class PlayerData {
 		return true;
 	}
 
+	public static void Damage(float damage){
+		Health -= damage;
+		if (Health <= 0) {
+			UIManager.GameOver ();
+		}
+	}
+
 	public static void initialize(){
 		Matches = GlobalConstants.PlayerStartingMatches;
+		Health = GlobalConstants.PlayerStartingHealth;
 	}
 
 }
