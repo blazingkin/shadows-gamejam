@@ -30,4 +30,11 @@ public class EnemyController : MonoBehaviour {
 		}
 	}
 
+	public static void clearEnemies(){
+		foreach (GameObject go in enemies) {
+			Destroy (go);
+		}
+		enemies = new List<GameObject> ();
+	}
+
 }
