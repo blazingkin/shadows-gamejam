@@ -12,6 +12,7 @@ public class EventController : MonoBehaviour {
 		events.Add (new ExtinguishLight ());
 		events.Add (new SpawnEnemy()); 
 		events.Add (new SpawnMatch()); 
+		events.Add (new LightningStrike ());
 	}
 	
 	// Update is called once per frame

@@ -13,7 +13,7 @@ public class SpawnMatch : GameEvent
 	}
 
 	public void OnEvent(){
-		EnemyController.enemies.Add (GameObject.Instantiate (Resources.Load ("Prefabs/match"), PositionMath.findLocationToSpawn(0), Quaternion.identity) as GameObject);
+		GameObject.Instantiate (Resources.Load ("Prefabs/match"), PositionMath.findLocationToSpawn(0), Quaternion.identity);
 	}
 
 }
