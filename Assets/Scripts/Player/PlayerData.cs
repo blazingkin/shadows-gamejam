@@ -23,6 +23,12 @@ public class PlayerData {
 		}
 	}
 
+	public static void Heal(float amount){
+		float max = Mathf.Ceil (Health);
+		Health += amount;
+		Health = Health > max ? max : Health;
+	}
+
 	public static void initialize(){
 		Matches = GlobalConstants.PlayerStartingMatches;
 		Health = GlobalConstants.PlayerStartingHealth;

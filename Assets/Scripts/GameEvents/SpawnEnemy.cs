@@ -9,7 +9,7 @@ public class SpawnEnemy : GameEvent
 	}
 
 	public float EventProbability(){
-		return 1f;
+		return .075f;
 	}
 
 	public void OnEvent(){

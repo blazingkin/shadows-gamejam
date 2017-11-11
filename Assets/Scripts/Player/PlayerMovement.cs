@@ -24,11 +24,16 @@ public class PlayerMovement : MonoBehaviour
 		if ((target - player.transform.position).magnitude < GlobalConstants.PlayerStoppingDist) {
 			rbody.velocity = Vector2.zero;
 		}
+		if (!LightSource.InLight (player.transform.position)) {
+			PlayerData.Damage (GlobalConstants.playerDarkDPS * Time.deltaTime);
+		} else {
+			PlayerData.Heal (GlobalConstants.healthInLightDPS * Time.deltaTime);
+		}
 	}
 
 	void OnTriggerEnter2D(Collider2D collision){
 		if (!LightSource.InLight (player.transform.position)) {
-			PlayerData.Damage (1f);
+			PlayerData.Damage (GlobalConstants.enemyDamage);
 		}
 	}
 
