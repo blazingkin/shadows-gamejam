@@ -30,6 +30,7 @@ public class WordClock : MonoBehaviour {
 		LightSource.resetLightSources ();
 		FlammableObject.clearFlammableObjects();
 		EnemyController.clearEnemies ();
+		PlayerData.initialize ();
 	}
 
 }

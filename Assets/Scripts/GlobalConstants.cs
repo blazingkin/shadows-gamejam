@@ -22,6 +22,7 @@ public class GlobalConstants
 
 	public static float PlayerInteractionDistance = 1f;
 
+	public static int PlayerStartingMatches = 3;
 
 	public static float InteractionDistance = 1f;
 

@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
 		player = gameObject;
 		rbody = GetComponent<Rigidbody2D> ();
 		target = player.transform.position;
+		PlayerData.playerObj = gameObject;
 	}
 	
 	// Update is called once per frame
