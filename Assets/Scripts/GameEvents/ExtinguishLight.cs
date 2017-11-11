@@ -9,7 +9,7 @@ public class ExtinguishLight : GameEvent {
 	}
 
 	public float EventProbability(){
-		return .05f;
+		return .2f;
 	}
 	public void OnEvent(){
 		if (FlammableObject.FlammableObjects.Count > 0) {
