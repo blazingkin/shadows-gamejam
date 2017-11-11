@@ -21,6 +21,9 @@ public class WordClock : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(moon.transform.position.x >= 15.5){
+			while (LightSource.LightSources.Count > 0) {
+				((LightSource)LightSource.LightSources [0]).Extinguish ();
+			}
 			SceneManager.LoadScene ("GameOver");
 		}
 	}
