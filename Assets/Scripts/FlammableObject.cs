@@ -12,6 +12,7 @@ public class FlammableObject : MonoBehaviour
 	public float DimRadius, BrightRadius = 0f;
 	protected LightSource lightSource = null;
 	public GameObject lightObject;
+	public bool shouldStartLit = false;
 
 	public void Start(){
 		foreach(Transform tr in transform){
@@ -21,7 +22,9 @@ public class FlammableObject : MonoBehaviour
 		}
 		this.Position = transform.position;
 		FlammableObjects.Add(this);
-		onLit ();
+		if (shouldStartLit) {
+			onLit ();
+		}
 	}
 
 	public virtual void onLit(){
