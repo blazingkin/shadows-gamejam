@@ -7,8 +7,8 @@ public class PlayerMovement : MonoBehaviour
 	Rigidbody2D rbody;
 	Vector3 target;
 
-	public GameObject idle, walking;
-
+	public GameObject idle, walking, playerLight;
+	private bool right = true;
 
 	// Use this for initialization
 	void Start ()
@@ -47,7 +47,20 @@ public class PlayerMovement : MonoBehaviour
 		target = PositionMath.getMouseLocation ();
 		rbody.velocity = target - player.transform.position;
 		rbody.velocity /= rbody.velocity.magnitude;
-		rbody.velocity *= GlobalConstants.PlayerSpeed; 
+		rbody.velocity *= GlobalConstants.PlayerSpeed;
+		if (target.x < player.transform.position.x) {
+			if (right) {
+				playerLight.transform.position = player.transform.position + new Vector3 (0, 0, .1f);
+				player.transform.rotation = Quaternion.Euler (new Vector3 (180, 0, 180));
+				right = false;
+			}
+		} else {
+			if (!right) {
+				playerLight.transform.position = player.transform.position + new Vector3 (0, 0, 0.1f);
+				player.transform.rotation = Quaternion.Euler (new Vector3 (0, 0, 0));
+				right = true;
+			}
+		}
 		player.GetComponent<SpriteRenderer> ().sprite = walking.GetComponent<SpriteRenderer> ().sprite;
 		player.GetComponent<Animator> ().runtimeAnimatorController = walking.GetComponent<Animator> ().runtimeAnimatorController;
 	}
