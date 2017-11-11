@@ -21,11 +21,15 @@ public class WordClock : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(moon.transform.position.x >= 15.5){
-			while (LightSource.LightSources.Count > 0) {
-				((LightSource)LightSource.LightSources [0]).Extinguish ();
-			}
+			cleanup ();
 			SceneManager.LoadScene ("GameOver");
 		}
+	}
+
+	private void cleanup(){
+		LightSource.resetLightSources ();
+		FlammableObject.clearFlammableObjects();
+		EnemyController.clearEnemies ();
 	}
 
 }

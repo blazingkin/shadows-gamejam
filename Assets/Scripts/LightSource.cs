@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class LightSource{
-	public static ArrayList LightSources = new ArrayList();
+	public static List<LightSource> LightSources = new List<LightSource>();
+
 	public GameObject Object;
 	public Light dim;
 	public Light bright;
@@ -48,6 +49,12 @@ public class LightSource{
 		lit = false;
 	}
 
+	private float RadiusToSpot(float radius){
+		//Debug.Log (Mathf.Atan (radius));
+		//Debug.Log (Mathf.Rad2Deg * Mathf.Atan (radius));
+		return Mathf.Rad2Deg * Mathf.Atan (radius) * 2;
+	}
+
 	public bool InThisLight(Vector3 location){
 		return (location - Object.transform.position).magnitude < DimRadius;
 	}
@@ -75,10 +82,11 @@ public class LightSource{
 		return false;
 	}
 
-	private float RadiusToSpot(float radius){
-		//Debug.Log (Mathf.Atan (radius));
-		//Debug.Log (Mathf.Rad2Deg * Mathf.Atan (radius));
-		return Mathf.Rad2Deg * Mathf.Atan (radius) * 2;
+	public static void resetLightSources(){
+		while (LightSources.Count > 1) {
+			LightSources [0].Extinguish ();
+		}
+		LightSources = new List<LightSource> ();
 	}
 
 }

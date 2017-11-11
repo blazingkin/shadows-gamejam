@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 /* More like inflammable object, amirite */
 public class FlammableObject : MonoBehaviour
 {
+	private static List<FlammableObject> FlammableObjects = new List<FlammableObject> ();
+
 	public Vector3 Position;
 	public float DimRadius, BrightRadius = 0f;
 	protected LightSource lightSource = null;
@@ -17,6 +20,7 @@ public class FlammableObject : MonoBehaviour
 			}
 		}
 		this.Position = transform.position;
+		FlammableObjects.Add(this);
 		onLit ();
 	}
 
@@ -43,6 +47,12 @@ public class FlammableObject : MonoBehaviour
 				}
 			}
 		}
+	}
+
+
+
+	public static void clearFlammableObjects(){
+		FlammableObjects = new List<FlammableObject>();
 	}
 
 }
