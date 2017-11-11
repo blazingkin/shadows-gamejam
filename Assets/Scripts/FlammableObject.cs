@@ -46,17 +46,20 @@ public class FlammableObject : MonoBehaviour
 		if (Input.GetMouseButtonDown (1)) {
 			Vector3 mousePos = PositionMath.getMouseLocation();
 			if ((transform.position - mousePos).magnitude < GlobalConstants.InteractionDistance){
-				Debug.Log (lightSource);
 				if (lightSource == null || lightSource.lit == false) {
 					if ((PositionMath.getPlayerPosition () - transform.position).magnitude < GlobalConstants.PlayerInteractionDistance) {
-						onLit ();
+						if (PlayerData.useMatch ()) {
+							onLit ();
+						}
 					}
 				}
 			}
 		}
 	}
 
-
+	public virtual float ExtinguishProbability(){
+		return 1f;
+	}
 
 	public static void clearFlammableObjects(){
 		FlammableObjects = new List<FlammableObject>();
