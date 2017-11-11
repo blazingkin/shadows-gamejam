@@ -10,10 +10,6 @@ public class FlammableObject : MonoBehaviour
 	private LightSource lightSource = null;
 	public GameObject lightObject;
 
-	public FlammableObject (Vector3 position){
-		this.Position = position;
-	}
-
 	public void Start(){
 		foreach(Transform tr in transform){
 			if(tr.tag == "LightObj"){
@@ -21,13 +17,9 @@ public class FlammableObject : MonoBehaviour
 			}
 		}
 		this.Position = transform.position;
-		onLit ();
 	}
 
 	public void onLit(){
-		if (null != lightSource) {
-			lightSource.Extinguish();
-		}
 		lightSource = new LightSource(lightObject, BrightRadius, DimRadius);
 	}
 
@@ -40,11 +32,13 @@ public class FlammableObject : MonoBehaviour
 
 	void Update(){
 		if (Input.GetMouseButtonDown (1)) {
-			Debug.Log ("RMB");
 			Vector3 mousePos = PositionMath.getMouseLocation();
-			if ((Position - mousePos).magnitude < GlobalConstants.PlayerInteractionDist){
-				if (lightSource == null) {
-					onLit ();
+			if ((transform.position - mousePos).magnitude < GlobalConstants.InteractionDistance){
+				Debug.Log (lightSource);
+				if (lightSource == null || lightSource.lit == false) {
+					if ((PositionMath.getPlayerPosition () - transform.position).magnitude < GlobalConstants.PlayerInteractionDistance) {
+						onLit ();
+					}
 				}
 			}
 		}

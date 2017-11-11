@@ -14,5 +14,9 @@ public class PositionMath
 		return new Vector3 (x, y);
 	}
 
+	public static Vector3 getPlayerPosition(){
+		return GameObject.FindWithTag ("Player").transform.position;
+	}
+
 }
 
