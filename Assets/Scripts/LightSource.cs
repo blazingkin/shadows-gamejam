@@ -50,13 +50,12 @@ public class LightSource{
 	}
 
 	public bool InThisLight(Vector3 location){
-		Vector2 distance = new Vector2(Object.transform.position.x - location.x, Object.transform.position.y - location.x);
-		return distance.magnitude < DimRadius;
+		return (location - Object.transform.position).magnitude < DimRadius;
 	}
 
 	public bool InThisBrightLight(Vector3 location){
-		Vector2 distance = new Vector2(Object.transform.position.x - location.x, Object.transform.position.y - location.y);
-		return distance.magnitude < BrightRadius;
+		return (location - Object.transform.position).magnitude < BrightRadius;
+
 	}
 
 	public static bool InLight(Vector3 location){
