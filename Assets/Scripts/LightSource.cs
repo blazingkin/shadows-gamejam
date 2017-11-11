@@ -10,6 +10,7 @@ public class LightSource{
 	public GameObject dimObj;
 	public GameObject brightObj;
 	public float DimRadius, BrightRadius;
+	public bool lit = false;
 
 	public LightSource(GameObject obj, float brightRadius, float dimRadius){
 		this.Object = obj;
@@ -35,7 +36,7 @@ public class LightSource{
 		//brightObj.SetActive (true);
 		dim.enabled = true;
 		bright.enabled = true;
-
+		lit = true;
 	}
 
 	public void UpdateLighting(){
@@ -47,6 +48,7 @@ public class LightSource{
 		LightSources.Remove(this);
 		dim.enabled = false;
 		bright.enabled = false;
+		lit = false;
 	}
 
 	public bool InThisLight(Vector3 location){
