@@ -20,18 +20,18 @@ public class FlammableObject : MonoBehaviour
 		onLit ();
 	}
 
-	public void onLit(){
+	public virtual void onLit(){
 		lightSource = new LightSource(lightObject, BrightRadius, DimRadius);
 	}
 
-	public void onExtinguish(){
+	public virtual void onExtinguish(){
 		if (null != lightSource) {
 			lightSource.Extinguish();
 		}
 		lightSource = null;
 	}
 
-	void Update(){
+	public virtual void Update(){
 		if (Input.GetMouseButtonDown (1)) {
 			Vector3 mousePos = PositionMath.getMouseLocation();
 			if ((transform.position - mousePos).magnitude < GlobalConstants.InteractionDistance){
