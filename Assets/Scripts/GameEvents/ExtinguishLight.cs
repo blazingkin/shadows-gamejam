@@ -12,9 +12,9 @@ public class ExtinguishLight : GameEvent {
 		return .05f;
 	}
 	public void OnEvent(){
-		if (LightSource.LightSources.Count > 0) {
-			int index = Random.Range (0, LightSource.LightSources.Count - 1);
-			((LightSource) LightSource.LightSources[index]).Extinguish();
+		if (FlammableObject.FlammableObjects.Count > 0) {
+			int index = Random.Range (0, FlammableObject.FlammableObjects.Count - 1);
+			FlammableObject.FlammableObjects [index].onExtinguish ();
 		}
 	}
 

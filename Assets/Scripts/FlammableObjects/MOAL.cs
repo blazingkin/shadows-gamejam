@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CampFire : FlammableObject {
+public class MOAL : FlammableObject {
 
 	public Sprite litSprite;
 	public Sprite extinguishedSprite;
@@ -10,11 +10,12 @@ public class CampFire : FlammableObject {
 	public override void onLit(){
 		base.onLit ();
 		GetComponent<SpriteRenderer> ().sprite = litSprite;
+		Invoke ("onExtinguish", 2);
 	}
 
 	public override void onExtinguish(){
 		base.onExtinguish ();
-		GetComponent<SpriteRenderer> ().sprite = extinguishedSprite;
+		Destroy (gameObject);
+		FlammableObjects.Remove (this);
 	}
-
 }
