@@ -7,7 +7,7 @@ public class FlammableObject : MonoBehaviour
 {
 	public Vector3 Position;
 	public float DimRadius, BrightRadius = 0f;
-	private LightSource lightSource = null;
+	protected LightSource lightSource = null;
 	public GameObject lightObject;
 
 	public void Start(){
