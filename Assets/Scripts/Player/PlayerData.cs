@@ -16,6 +16,13 @@ public class PlayerData {
 		return true;
 	}
 
+	public static void Damage(float damage){
+		Health -= damage;
+		if (Health <= 0) {
+			UIManager.GameOver ();
+		}
+	}
+
 	public static void initialize(){
 		Matches = GlobalConstants.PlayerStartingMatches;
 		Health = GlobalConstants.PlayerStartingHealth;

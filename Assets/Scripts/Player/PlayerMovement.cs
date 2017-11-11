@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
 	}
 
 	void OnTriggerEnter2D(Collider2D collision){
-		Debug.Log ("Player collided");
+		PlayerData.Damage (1f);
 	}
 
 	void OnMouseDown(){
