@@ -7,6 +7,7 @@ public class PlayerData {
 	public static GameObject playerObj;
 	public static int Matches = GlobalConstants.PlayerStartingMatches;
 	public static float Health = GlobalConstants.PlayerStartingHealth;
+	public static float SpeedMultiplier = 1;
 	public static PlayerHealthManagement hm;
 
 	public static void SetHM(PlayerHealthManagement healthManager){
@@ -48,6 +49,7 @@ public class PlayerData {
 	public static void initialize(){
 		Matches = GlobalConstants.PlayerStartingMatches;
 		Health = GlobalConstants.PlayerStartingHealth;
+		SpeedMultiplier = 1;
 	}
 
 
