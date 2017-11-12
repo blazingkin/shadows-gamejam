@@ -1,4 +1,24 @@
-# shadows-gameja
+# shadows-gamejame
+
+### Download / Run Game
+
+#### Windows
+
+Download [shadows-gamejam.zip](https://github.com/blazingkin/shadows-gamejam/raw/master/shadows-gamejam.zip).
+
+Unzip the archive. (Use a utility like 7Zip or WinRar)
+
+Run the executable (Shadows.exe)
+
+#### Mac OS
+
+Download [OSXBuild.app.zip](https://github.com/blazingkin/shadows-gamejam/raw/master/OSXBuild.app.zip)
+
+Unzip the archive.
+
+Run OSXBuild.app
+
+### Asset Attributions
 
 Assets From:
 Kenny Assets http://kenney.nl/assets/
