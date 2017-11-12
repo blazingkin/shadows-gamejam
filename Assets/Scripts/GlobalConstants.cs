@@ -37,5 +37,10 @@ public class GlobalConstants
 	public static float playerDarkDPS = .1f;
 	public static float enemyDamage = 1f;
 	public static float healthInLightDPS = .25f;
+
+
+	public static float startingMaskHeight = 903f;
+	public static float startingMaskWidth = 45f;
+
 }
 
