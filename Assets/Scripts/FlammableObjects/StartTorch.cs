@@ -1,12 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using System.Collections;
 
-public class CampFire : FlammableObject {
-	
+public class StartTorch : FlammableObject
+{
+
 	public override void onLit(){
 		base.onLit ();
-
+		Invoke("onExtinguish", GlobalConstants.StartingTorchLife);
 	}
 
 	public override void onExtinguish(){
@@ -14,7 +14,7 @@ public class CampFire : FlammableObject {
 	}
 
 	public override float ExtinguishProbability(){
-		return 0.4f;
+		return 0.8f;
 	}
-
 }
+

@@ -51,5 +51,10 @@ public class GlobalConstants
 	public static float WizardShootProbability = .002f;
 	public static float FireballVelocity = 2f;
 	public static int FireballLifeTime = 5;
+
+	public static int StartingTorchLife = 7;
+	public static int TorchTimeToRandomExtinguish = 4;
+
+	public static float MatchLifetime = 20f;
 }
 

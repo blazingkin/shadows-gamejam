@@ -5,9 +5,11 @@ using UnityEngine;
 public class Match : MonoBehaviour {
 
 	GameObject match;
+	float timePassed;
 	// Use this for initialization
 	void Start () {
 		match = gameObject;
+		timePassed = 0f;
 	}
 	
 	// Update is called once per frame
@@ -15,6 +17,12 @@ public class Match : MonoBehaviour {
 		if (PositionMath.playerInteractedWith (match.transform.position)) {
 			Destroy (match);
 			PlayerData.Matches++;
+			return;
+		}
+		timePassed+= Time.deltaTime;
+		if (timePassed > GlobalConstants.MatchLifetime) {
+			Destroy (match);
+			return;
 		}
 	}
 }

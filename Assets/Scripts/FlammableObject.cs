@@ -16,6 +16,7 @@ public class FlammableObject : MonoBehaviour
 	public bool shouldStartLit = false;
 	public Sprite litSprite;
 	public Sprite extinguishedSprite;
+	public float timePassed = 0f;
 
 	public void Start(){
 		foreach(Transform tr in transform){
@@ -33,6 +34,7 @@ public class FlammableObject : MonoBehaviour
 	public virtual void onLit(){
 		lightSource = new LightSource(lightObject, BrightRadius, DimRadius);
 		GetComponent<SpriteRenderer> ().sprite = litSprite;
+		timePassed = 0;
 		LitFlammableObjects.Add (this);
 	}
 
@@ -46,6 +48,7 @@ public class FlammableObject : MonoBehaviour
 	}
 
 	public virtual void Update(){
+		timePassed += Time.deltaTime;
 		if (PositionMath.playerInteractedWith (transform.position)) {
 			if (lightSource == null || lightSource.lit == false) {
 				if (PlayerData.useMatch ()) {
@@ -56,6 +59,9 @@ public class FlammableObject : MonoBehaviour
 	}
 
 	public virtual float ExtinguishProbability(){
+		if (timePassed < GlobalConstants.TorchTimeToRandomExtinguish) {
+			return 0f;
+		}
 		return 1f;
 	}
 
