@@ -18,6 +18,10 @@ Unzip the archive.
 
 Run OSXBuild.app
 
+## Tutorial
+
+![Tutorial](/Assets/Resources/Sprites/GUI/Tutorial.png?raw=true "Tutorial")
+
 ## Asset Attributions
 
 
