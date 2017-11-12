@@ -21,7 +21,7 @@ public class WordClock : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(moon.transform.position.x >= GlobalConstants.EndMoonPos){
-			UIManager.GameOver ();
+			UIManager.Victory ();
 		}
 	}
 
