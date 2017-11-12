@@ -20,7 +20,7 @@ public class Match : MonoBehaviour {
 			return;
 		}
 		timePassed+= Time.deltaTime;
-		if (timePassed > GlobalConstants.MatchLifetime) {
+		if (timePassed > GlobalConstants.MatchLifetime && !LightSource.InLight(transform.position)) {
 			Destroy (match);
 			return;
 		}

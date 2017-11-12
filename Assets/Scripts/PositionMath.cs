@@ -23,7 +23,7 @@ public class PositionMath
 		x = Random.Range (-GlobalConstants.MapWidth, GlobalConstants.MapWidth);
 		y = Random.Range (-GlobalConstants.MapHeight, GlobalConstants.MapHeight);
 		Vector3 Position = new Vector3(x, y);
-		if (!LightSource.InLight (Position)) {
+		if (!LightSource.InLight (Position) && (Position - getPlayerPosition()).magnitude > GlobalConstants.PlayerNoSpawnRange) {
 			return Position;
 		}
 		if (counter > 100) {
