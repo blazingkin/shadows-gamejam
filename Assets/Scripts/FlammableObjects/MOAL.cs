@@ -6,6 +6,7 @@ public class MOAL : FlammableObject {
 
 	public override void onLit(){
 		base.onLit ();
+		EnemyController.clearEnemies ();
 		Invoke ("onExtinguish", 2);
 	}
 
