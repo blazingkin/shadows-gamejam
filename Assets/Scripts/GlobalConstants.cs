@@ -42,5 +42,7 @@ public class GlobalConstants
 	public static float startingMaskHeight = 903f;
 	public static float startingMaskWidth = 45f;
 
+	public static float torchExplosionRadius = 4f;
+
 }
 
