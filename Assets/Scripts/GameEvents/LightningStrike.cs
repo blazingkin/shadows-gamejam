@@ -8,7 +8,7 @@ public class LightningStrike : GameEvent {
 		return "Lightning Strikes!";
 	}
 	public float EventProbability(){
-		return .01f;
+		return .02f;
 	}
 	public void OnEvent(){
 		GameObject.Instantiate (Resources.Load ("Prefabs/UI/LightningStrike"), Vector3.zero, Quaternion.identity);

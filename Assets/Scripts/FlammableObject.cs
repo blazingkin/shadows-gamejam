@@ -7,6 +7,7 @@ using UnityEngine;
 public class FlammableObject : MonoBehaviour
 {
 	public static List<FlammableObject> FlammableObjects = new List<FlammableObject> ();
+	public static List<FlammableObject> LitFlammableObjects = new List<FlammableObject>();
 
 	public Vector3 Position;
 	public float DimRadius, BrightRadius = 0f;
@@ -32,6 +33,7 @@ public class FlammableObject : MonoBehaviour
 	public virtual void onLit(){
 		lightSource = new LightSource(lightObject, BrightRadius, DimRadius);
 		GetComponent<SpriteRenderer> ().sprite = litSprite;
+		LitFlammableObjects.Add (this);
 	}
 
 	public virtual void onExtinguish(){
@@ -40,6 +42,7 @@ public class FlammableObject : MonoBehaviour
 		}
 		lightSource = null;
 		GetComponent<SpriteRenderer> ().sprite = extinguishedSprite;
+		LitFlammableObjects.Remove (this);
 	}
 
 	public virtual void Update(){
