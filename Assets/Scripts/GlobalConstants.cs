@@ -28,7 +28,7 @@ public class GlobalConstants
 	public static float InteractionDistance = 1f;
 
 
-	public static float EndMoonPos = 13.5f;
+	public static float EndMoonPos = 15.5f;
 
 	public static Vector2 FirstMatchPos = new Vector2(-MapWidth + .4f, -MapHeight + .4f);
 	public static float MatchSpacing = .4f;
