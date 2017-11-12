@@ -13,8 +13,19 @@ public class CampFire : FlammableObject {
 		base.onExtinguish ();
 	}
 
+	public override void Update(){
+		timePassed += Time.deltaTime;
+		if (PositionMath.playerInteractedWith (transform.position)) {
+			if (lightSource == null || lightSource.lit == false) {
+				if (PlayerData.useMatch () && PlayerData.useMatch()) {
+					onLit ();
+				}
+			}
+		}
+	}
+
 	public override float ExtinguishProbability(){
-		return 0.4f;
+		return 0.5f;
 	}
 
 }

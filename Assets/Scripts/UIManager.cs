@@ -20,7 +20,6 @@ public class UIManager : MonoBehaviour {
 	}
 
 	public void BackToMainMenu(){
-		Debug.Log ("TEst");
 		SceneManager.LoadScene ("MainMenu");
 	}
 

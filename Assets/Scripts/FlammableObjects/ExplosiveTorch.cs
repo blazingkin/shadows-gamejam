@@ -10,11 +10,13 @@ public class ExplosiveTorch : FlammableObject
 	}
 
 	public override void onExtinguish(){
-		base.onExtinguish ();
-		GameObject.Instantiate (Resources.Load ("Prefabs/ParticleEffects/Explosion"), gameObject.transform.position, Quaternion.identity);
-		if ((PositionMath.getPlayerPosition() - gameObject.transform.position).magnitude < BrightRadius){
-			PlayerData.Damage(0.5f);
+		if (null != lightSource) {
+			GameObject.Instantiate (Resources.Load ("Prefabs/ParticleEffects/Explosion"), gameObject.transform.position, Quaternion.identity);
+			if ((PositionMath.getPlayerPosition() - gameObject.transform.position).magnitude < BrightRadius){
+				PlayerData.Damage(0.5f);
+			}
 		}
+		base.onExtinguish ();
 	}
 
 	public override float ExtinguishProbability(){

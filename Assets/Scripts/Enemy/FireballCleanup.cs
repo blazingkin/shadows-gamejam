@@ -13,7 +13,7 @@ public class FireballCleanup : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		if (LightSource.InBrightLight (gameObject.transform.position)) {
+		if (LightSource.InLight (gameObject.transform.position)) {
 			Destroy (gameObject);
 		}
 	}
