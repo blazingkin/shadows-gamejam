@@ -56,5 +56,6 @@ public class GlobalConstants
 	public static int TorchTimeToRandomExtinguish = 4;
 
 	public static float MatchLifetime = 20f;
+	public static float PlayerNoSpawnRange = 3f;
 }
 
