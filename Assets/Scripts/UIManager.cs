@@ -28,14 +28,14 @@ public class UIManager : MonoBehaviour {
 		SceneManager.LoadScene (nextLevel);
 	}
 
+
+	public void Tutorial(){
+		SceneManager.LoadScene ("Tutorial");
+	}
+
 	public static void GameOver(){
 		cleanup ();
 		SceneManager.LoadScene ("GameOver");
-	}
-
-
-	public static void Tutorial(){
-		SceneManager.LoadScene ("Tutorial");
 	}
 
 	private static void cleanup(){
