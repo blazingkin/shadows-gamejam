@@ -17,7 +17,7 @@ public class CampFire : FlammableObject {
 		timePassed += Time.deltaTime;
 		if (PositionMath.playerInteractedWith (transform.position)) {
 			if (lightSource == null || lightSource.lit == false) {
-				if (PlayerData.useMatch () && PlayerData.useMatch()) {
+				if (PlayerData.Matches >= 2 && PlayerData.useMatch () && PlayerData.useMatch()) {
 					onLit ();
 				}
 			}
