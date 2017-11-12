@@ -5,8 +5,10 @@ public class SpawnEnemy : GameEvent
 {
 
 	float probability;
-	public SpawnEnemy(float probability){
+	string enemyName;
+	public SpawnEnemy(float probability, string enemyName){
 		this.probability = probability;
+		this.enemyName = enemyName;
 	}
 
 	public string EventName(){
@@ -18,7 +20,7 @@ public class SpawnEnemy : GameEvent
 	}
 
 	public void OnEvent(){
-		EnemyController.enemies.Add (GameObject.Instantiate (Resources.Load ("Prefabs/enemy"), PositionMath.findLocationToSpawn (0), Quaternion.identity) as GameObject);
+		EnemyController.enemies.Add (GameObject.Instantiate (Resources.Load ("Prefabs/"+enemyName), PositionMath.findLocationToSpawn (0), Quaternion.identity) as GameObject);
 	}
 
 
