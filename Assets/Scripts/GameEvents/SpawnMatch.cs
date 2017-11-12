@@ -9,7 +9,7 @@ public class SpawnMatch : GameEvent
 	}
 
 	public float EventProbability(){
-		return .15f;
+		return .2f;
 	}
 
 	public void OnEvent(){

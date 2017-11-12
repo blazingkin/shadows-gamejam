@@ -34,6 +34,7 @@ public class GlobalConstants
 	public static Vector2 FirstMatchPos = new Vector2(-MapWidth + .4f, -MapHeight + .4f);
 	public static float MatchSpacing = .4f;
 
+	public static Vector2 GustOWindPos = new Vector2(-MapWidth, 0);
 
 	public static float playerDarkDPS = .1f;
 	public static float enemyDamage = 1f;
