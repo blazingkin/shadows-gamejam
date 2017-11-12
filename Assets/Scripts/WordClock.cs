@@ -9,6 +9,7 @@ public class WordClock : MonoBehaviour {
 	float gameLength = GlobalConstants.GameLength * 60;
 	Rigidbody2D rbody;
 	Vector2 speed;
+	public string nextLevel;
 
 	// Use this for initialization
 	void Start () {
@@ -21,7 +22,7 @@ public class WordClock : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(moon.transform.position.x >= GlobalConstants.EndMoonPos){
-			UIManager.Victory ();
+			UIManager.Victory (nextLevel);
 		}
 	}
 

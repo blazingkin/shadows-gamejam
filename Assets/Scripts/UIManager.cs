@@ -23,9 +23,9 @@ public class UIManager : MonoBehaviour {
 		SceneManager.LoadScene ("MainMenu");
 	}
 
-	public static void Victory(){
+	public static void Victory(string nextLevel){
 		cleanup ();
-		SceneManager.LoadScene ("VictoryScreen");
+		SceneManager.LoadScene (nextLevel);
 	}
 
 	public static void GameOver(){
