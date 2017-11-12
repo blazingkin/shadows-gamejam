@@ -4,12 +4,18 @@ using UnityEngine;
 
 public class ExtinguishLight : GameEvent {
 
+
+	float probability;
+	public ExtinguishLight(float probability){
+		this.probability = probability;
+	}
+
 	public string EventName(){
 		return "A light went out!";
 	}
 
 	public float EventProbability(){
-		return .1f;
+		return probability;
 	}
 	public void OnEvent(){
 		if (FlammableObject.LitFlammableObjects.Count > 0) {

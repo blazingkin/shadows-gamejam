@@ -40,5 +40,6 @@ public class UIManager : MonoBehaviour {
 		EnemyController.clearEnemies ();
 		MatchUIManager.clear ();
 		PlayerData.initialize ();
+		EventController.events.Clear ();
 	}
 }

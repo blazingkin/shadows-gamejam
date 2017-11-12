@@ -15,7 +15,7 @@ public class GlobalConstants
 
 
 
-	public static float PlayerSpeed = 1.3f;
+	public static float PlayerSpeed = 1.7f;
 
 
 	public static float PlayerStoppingDist = 0.2f;

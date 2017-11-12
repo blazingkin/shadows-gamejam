@@ -4,12 +4,17 @@ using System.Collections;
 public class SpawnMatch : GameEvent
 {
 
+	float probability;
+	public SpawnMatch(float probability){
+		this.probability = probability;
+	}
+
 	public string EventName(){
 		return "A match appears!";
 	}
 
 	public float EventProbability(){
-		return .1f;
+		return probability;
 	}
 
 	public void OnEvent(){

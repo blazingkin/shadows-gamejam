@@ -4,12 +4,17 @@ using System.Collections;
 public class SpawnEnemy : GameEvent
 {
 
+	float probability;
+	public SpawnEnemy(float probability){
+		this.probability = probability;
+	}
+
 	public string EventName(){
 		return "An enemy approaches";
 	}
 
 	public float EventProbability(){
-		return .12f;
+		return probability;
 	}
 
 	public void OnEvent(){

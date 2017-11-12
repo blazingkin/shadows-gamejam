@@ -7,14 +7,16 @@ public class EventController : MonoBehaviour {
 	float timePassed = 0;
 	float timeForEvents = 1;
 
+	public float extinguishLightProbability, spawnEnemyProbability, spawnMatchProbability, lightningStrikeProbability, windGustProbability, rainProbability;
+
 	// Use this for initialization
 	void Start () {
-		events.Add (new ExtinguishLight ());
-		events.Add (new SpawnEnemy()); 
-		events.Add (new SpawnMatch()); 
-		events.Add (new LightningStrike ());
-		events.Add (new WindGust ());
-		events.Add (new Rain ());
+		events.Add (new ExtinguishLight (extinguishLightProbability));
+		events.Add (new SpawnEnemy(spawnEnemyProbability)); 
+		events.Add (new SpawnMatch(spawnMatchProbability)); 
+		events.Add (new LightningStrike (lightningStrikeProbability));
+		events.Add (new WindGust (windGustProbability));
+		events.Add (new Rain (rainProbability));
 	}
 	
 	// Update is called once per frame
