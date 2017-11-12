@@ -7,7 +7,7 @@ public class EnemyController : MonoBehaviour {
 	public static List<GameObject> enemies = new List<GameObject> ();
 
 	private Rigidbody2D rbody;
-	private GameObject enemy;
+	protected GameObject enemy;
 	public float timePassed = 0f;
 	public float timeToCheck = 0.75f;
 	// Use this for initialization
@@ -17,7 +17,7 @@ public class EnemyController : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void FixedUpdate () {
+	protected virtual void FixedUpdate () {
 		rbody.AddForce (new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)));
 		timePassed += Time.deltaTime;
 		if (timePassed > timeToCheck) {
