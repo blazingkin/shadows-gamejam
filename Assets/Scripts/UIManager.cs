@@ -23,6 +23,11 @@ public class UIManager : MonoBehaviour {
 		SceneManager.LoadScene ("MainMenu");
 	}
 
+	public static void Victory(){
+		cleanup ();
+		SceneManager.LoadScene ("VictoryScreen");
+	}
+
 	public static void GameOver(){
 		cleanup ();
 		SceneManager.LoadScene ("GameOver");
