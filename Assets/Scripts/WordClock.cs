@@ -13,7 +13,7 @@ public class WordClock : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		moon = GameObject.Instantiate (Resources.Load ("Prefabs/UI/Moon"), new Vector2(-15.5f, 8.5f), Quaternion.identity) as GameObject;
+		moon = GameObject.Instantiate (Resources.Load ("Prefabs/UI/Moon"), new Vector2(-15.5f, 8.1f), Quaternion.identity) as GameObject;
 		rbody = moon.GetComponent<Rigidbody2D> ();
 		speed = new Vector2 ((GlobalConstants.MapWidth + GlobalConstants.EndMoonPos)/(gameLength), 0);
 		rbody.velocity = speed;
