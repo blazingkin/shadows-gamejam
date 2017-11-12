@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SpeedPotion : MonoBehaviour
+public class SlowPotion : MonoBehaviour
 {
 
 	GameObject potion;
@@ -15,7 +15,7 @@ public class SpeedPotion : MonoBehaviour
 	void Update ()
 	{
 		if (PositionMath.playerInteractedWith (potion.transform.position)) {
-			PlayerData.SpeedMultiplier *= 2;
+			PlayerData.SpeedMultiplier /= 2;
 			potion.SetActive (false);
 			Invoke ("RestoreSpeed", GlobalConstants.SpeedPotionTime);
 		}
