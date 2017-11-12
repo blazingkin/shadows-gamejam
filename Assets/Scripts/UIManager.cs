@@ -20,6 +20,7 @@ public class UIManager : MonoBehaviour {
 	}
 
 	public void BackToMainMenu(){
+		Debug.Log ("TEst");
 		SceneManager.LoadScene ("MainMenu");
 	}
 
@@ -36,6 +37,16 @@ public class UIManager : MonoBehaviour {
 	public static void GameOver(){
 		cleanup ();
 		SceneManager.LoadScene ("GameOver");
+	}
+
+	public void LoadCave(){
+		cleanup ();
+		SceneManager.LoadScene ("DungeonLevel");
+	}
+
+	public void LoadCastle(){
+		cleanup ();
+		SceneManager.LoadScene ("CastleLevel");
 	}
 
 	private static void cleanup(){
