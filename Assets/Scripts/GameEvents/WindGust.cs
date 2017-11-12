@@ -9,7 +9,7 @@ public class WindGust : GameEvent {
 	}
 
 	public float EventProbability(){
-		return .03f;
+		return .015f;
 	}
 
 	public void OnEvent(){
