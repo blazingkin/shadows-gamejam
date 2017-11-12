@@ -34,6 +34,10 @@ public class UIManager : MonoBehaviour {
 	}
 
 
+	public static void Tutorial(){
+		SceneManager.LoadScene ("Tutorial");
+	}
+
 	private static void cleanup(){
 		LightSource.resetLightSources ();
 		FlammableObject.clearFlammableObjects();
