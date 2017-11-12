@@ -9,13 +9,13 @@ public class ExtinguishLight : GameEvent {
 	}
 
 	public float EventProbability(){
-		return .2f;
+		return .15f;
 	}
 	public void OnEvent(){
-		if (FlammableObject.FlammableObjects.Count > 0) {
-			int index = Random.Range (0, FlammableObject.FlammableObjects.Count - 1);
-			if (Random.Range (0f, 1f) < FlammableObject.FlammableObjects [index].ExtinguishProbability ()) {
-				FlammableObject.FlammableObjects [index].onExtinguish ();
+		if (FlammableObject.LitFlammableObjects.Count > 0) {
+			int index = Random.Range (0, FlammableObject.LitFlammableObjects.Count - 1);
+			if (Random.Range (0f, 1f) < FlammableObject.LitFlammableObjects [index].ExtinguishProbability ()) {
+				FlammableObject.LitFlammableObjects [index].onExtinguish ();
 			}
 		}
 	}
