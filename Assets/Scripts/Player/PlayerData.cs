@@ -38,6 +38,13 @@ public class PlayerData {
 		hm.healthChanged = true;
 	}
 
+	public static void RestoreHeart(){
+		Health += 1;
+		Health = Health > GlobalConstants.PlayerStartingHealth ? GlobalConstants.PlayerStartingHealth : Health;
+		hm.health = Health;
+		hm.healthChanged = true;
+	}
+
 	public static void initialize(){
 		Matches = GlobalConstants.PlayerStartingMatches;
 		Health = GlobalConstants.PlayerStartingHealth;
