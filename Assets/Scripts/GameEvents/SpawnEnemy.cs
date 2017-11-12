@@ -12,7 +12,7 @@ public class SpawnEnemy : GameEvent
 	}
 
 	public string EventName(){
-		return "An enemy approaches";
+		return "An enemy ("+enemyName+") approaches";
 	}
 
 	public float EventProbability(){
@@ -20,7 +20,7 @@ public class SpawnEnemy : GameEvent
 	}
 
 	public void OnEvent(){
-		EnemyController.enemies.Add (GameObject.Instantiate (Resources.Load ("Prefabs/"+enemyName), PositionMath.findLocationToSpawn (0), Quaternion.identity) as GameObject);
+		EnemyController.enemies.Add (GameObject.Instantiate (Resources.Load ("Prefabs/Monsters/"+enemyName), PositionMath.findLocationToSpawn (0), Quaternion.identity) as GameObject);
 	}
 
 
