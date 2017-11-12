@@ -25,7 +25,7 @@ public class CampFire : FlammableObject {
 	}
 
 	public override float ExtinguishProbability(){
-		return 0.5f;
+		return 0.75f;
 	}
 
 }
