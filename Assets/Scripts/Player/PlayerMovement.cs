@@ -47,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
 		target = PositionMath.getMouseLocation ();
 		rbody.velocity = target - player.transform.position;
 		rbody.velocity /= rbody.velocity.magnitude;
-		rbody.velocity *= GlobalConstants.PlayerSpeed;
+		rbody.velocity *= GlobalConstants.PlayerSpeed * PlayerData.SpeedMultiplier;
 		if (target.x < player.transform.position.x) {
 			if (right) {
 				playerLight.transform.position = player.transform.position + new Vector3 (0, 0, .1f);
