@@ -22,9 +22,9 @@ public class EnemyController : MonoBehaviour {
 		timePassed += Time.deltaTime;
 		if (timePassed > timeToCheck) {
 			if (LightSource.InBrightLight (enemy.transform.position)) {
-				enemy.GetComponent<SpriteRenderer> ().enabled = false;
-			} else {
-				enemy.GetComponent<SpriteRenderer> ().enabled = true;
+				enemies.Remove (enemy);
+				Destroy (enemy);
+				return;
 			}
 			timePassed = 0;
 		}

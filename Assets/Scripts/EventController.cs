@@ -13,6 +13,8 @@ public class EventController : MonoBehaviour {
 		events.Add (new SpawnEnemy()); 
 		events.Add (new SpawnMatch()); 
 		events.Add (new LightningStrike ());
+		events.Add (new WindGust ());
+		events.Add (new Rain ());
 	}
 	
 	// Update is called once per frame

@@ -34,6 +34,9 @@ public class GlobalConstants
 	public static Vector2 FirstMatchPos = new Vector2(-MapWidth + .4f, -MapHeight + .4f);
 	public static float MatchSpacing = .4f;
 
+	public static Vector2 GustOWindPos = new Vector2(-MapWidth, 0);
+	public static Vector3 RainPos = new Vector3 (-12.4f, 6.9f, -.1f);
+	public static Quaternion RainRotation = Quaternion.Euler(new Vector3(49.5f, 90f, 0f));
 
 	public static float playerDarkDPS = .1f;
 	public static float enemyDamage = 1f;
