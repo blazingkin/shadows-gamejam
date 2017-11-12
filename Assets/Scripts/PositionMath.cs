@@ -33,7 +33,7 @@ public class PositionMath
 	}
 
 	public static bool playerInteractedWith(Vector3 location){
-		if (Input.GetMouseButtonDown (1)) {
+		if (Input.GetMouseButtonDown (1) || Input.GetKeyDown (KeyCode.Space)) {
 			Vector3 mousePos = PositionMath.getMouseLocation();
 			if ((location - mousePos).magnitude < GlobalConstants.InteractionDistance) {
 				if ((getPlayerPosition () - location).magnitude < GlobalConstants.PlayerInteractionDistance) {
